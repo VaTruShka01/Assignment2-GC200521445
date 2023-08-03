@@ -43,6 +43,7 @@ public class DetailsController {
     private Label stateLabel;
     private ApiResponse apiResponse;
 
+
     /**
      * Handles the event when the user requests to go back to the search view.
      * Initiates a scene change to the search view.
@@ -56,6 +57,7 @@ public class DetailsController {
         SceneChanger sceneChanger = new SceneChanger();
         SceneChanger.changeScene(event, "Views/search_view.fxml", null, this.apiResponse);
     }
+
 
     /**
      * Displays the details of a given data object in the UI.

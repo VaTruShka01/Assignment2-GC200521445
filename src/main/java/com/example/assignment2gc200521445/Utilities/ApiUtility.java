@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 
 public class ApiUtility {
 
+
     /**
      * Retrieves data from an API based on the provided search name.
      *

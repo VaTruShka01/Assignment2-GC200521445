@@ -68,7 +68,6 @@ public class SearchController implements Initializable {
         listView.getItems().clear();
         String searchText = textField.getText();
         apiResponse = ApiUtility.getDataFromApi(searchText);
-        System.out.println(apiResponse.getData().length == 0);
         if (apiResponse.getData().length == 0) {
             chosenLabel.setText("No Jobs were found!");
             detailsButton.setVisible(false);
