@@ -16,13 +16,20 @@ public class SceneChanger {
         public static void changeScene(ActionEvent event, String fxmlFile, Data data) throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
             Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             if (data != null){
                 DetailsController controller = fxmlLoader.getController();
                 controller.displayDetails(data);
+                stage.setTitle("Job Description");
             }
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            else {
+                stage.setTitle("Job Search");
+            }
+
+
+
             stage.setScene(scene);
             stage.show();
 

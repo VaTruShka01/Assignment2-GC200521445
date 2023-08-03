@@ -5,6 +5,7 @@ import com.example.assignment2gc200521445.Utilities.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -23,7 +24,7 @@ public class DetailsController {
     private Label countryLabel;
 
     @FXML
-    private Text detailsText;
+    private ListView<String> detailsText;
 
     @FXML
     private Label employerNameLabel;
@@ -54,7 +55,7 @@ public class DetailsController {
         applyLinkLabel.setText(data.getApplyLink());
         cityLabel.setText(data.getJobCity());
         countryLabel.setText(data.getJobCountry());
-        detailsText.setText(data.getJobDescription());
+        detailsText.getItems().add(data.getJobDescription());
         employerNameLabel.setText(data.getEmployerName());
         jobTitleLabel.setText(data.getJobTitle());
         publisherLabel.setText(data.getJobPublisher());

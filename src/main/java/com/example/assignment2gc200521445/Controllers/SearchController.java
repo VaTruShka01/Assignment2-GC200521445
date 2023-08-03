@@ -39,7 +39,7 @@ public class SearchController implements Initializable {
 
     Data selectedData = listView.getSelectionModel().getSelectedItem();
     SceneChanger sceneChanger = new SceneChanger();
-    sceneChanger.changeScene(event, "details_view", selectedData);
+    sceneChanger.changeScene(event, "details_view.fxml", selectedData);
 
     }
 

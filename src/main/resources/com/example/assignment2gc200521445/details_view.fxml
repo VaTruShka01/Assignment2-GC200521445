@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -11,12 +12,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="481.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2gc200521445.Controllers.DetailsController">
+<AnchorPane prefHeight="585.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2gc200521445.Controllers.DetailsController">
    <children>
-      <BorderPane layoutX="6.0" prefHeight="481.0" prefWidth="699.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="789.0" prefWidth="1208.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                <children>
@@ -48,9 +47,9 @@
             </VBox>
          </top>
          <left>
-            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="546.0" prefWidth="232.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fx:id="jobImageView" fitHeight="150.0" fitWidth="238.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="jobImageView" fitHeight="161.0" fitWidth="277.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -83,13 +82,6 @@
                </children>
             </VBox>
          </left>
-         <right>
-            <Text fx:id="detailsText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="306.13671875" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets left="10.0" top="10.0" />
-               </BorderPane.margin>
-            </Text>
-         </right>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
@@ -100,6 +92,9 @@
                </BorderPane.margin>
             </Button>
          </bottom>
+         <right>
+            <ListView fx:id="detailsText" prefHeight="420.0" prefWidth="445.0" BorderPane.alignment="CENTER" />
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>
