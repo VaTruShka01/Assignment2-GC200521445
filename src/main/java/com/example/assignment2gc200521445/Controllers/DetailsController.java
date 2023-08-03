@@ -63,7 +63,6 @@ public class DetailsController {
 
     public void displayDetails(Data data) {
 
-
         applyLinkLabel.setText(data.getApplyLink());
         cityLabel.setText(data.getJobCity());
         countryLabel.setText(data.getJobCountry());

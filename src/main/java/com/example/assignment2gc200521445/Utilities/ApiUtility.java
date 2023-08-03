@@ -15,7 +15,6 @@ import java.nio.file.Paths;
 
 public class ApiUtility {
 
-
     /**
      * Retrieves data from an API based on the provided search name.
      *
@@ -43,7 +42,6 @@ public class ApiUtility {
         catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 

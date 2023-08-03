@@ -13,7 +13,6 @@ import java.io.IOException;
 
 public class SceneChanger {
 
-
     /**
      * Changes the current scene to the specified FXML view file.
      * Optionally, passes data to the new scene's controller and updates the stage title.
@@ -24,6 +23,7 @@ public class SceneChanger {
      */
 
         public static void changeScene(ActionEvent event, String fxmlFile, Data data) throws IOException {
+
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

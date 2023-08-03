@@ -34,7 +34,6 @@ public class SearchController implements Initializable {
     @FXML
     private TextField textField;
 
-
     /**
      * Handles the event when the user requests to view details of a selected item.
      * Retrieves the selected data from the list view and initiates a scene change to the details view.
@@ -61,6 +60,7 @@ public class SearchController implements Initializable {
 
     @FXML
     void searchData(ActionEvent event) {
+
         listView.getItems().clear();
         String searchText = textField.getText();
         ApiResponse apiResponse = ApiUtility.getDataFromApi(searchText);
@@ -69,7 +69,6 @@ public class SearchController implements Initializable {
             chosenLabel.setText("No Jobs were found!");
         }
         else {
-
             chosenLabel.setText("");
             listView.getItems().addAll(apiResponse.getData());
         }
@@ -97,6 +96,5 @@ public class SearchController implements Initializable {
                 imageView.setImage(new Image("https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"));
             }
         });
-
     }
 }

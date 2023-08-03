@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="585.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2gc200521445.Controllers.DetailsController">
+<AnchorPane prefHeight="585.0" prefWidth="605.0" stylesheets="@../Styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2gc200521445.Controllers.DetailsController">
    <children>
       <BorderPane prefHeight="789.0" prefWidth="1208.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -93,7 +93,10 @@
             </Button>
          </bottom>
          <right>
-            <ListView fx:id="detailsText" prefHeight="420.0" prefWidth="445.0" BorderPane.alignment="CENTER" />
+            <ListView fx:id="detailsText" prefHeight="420.0" prefWidth="445.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin></ListView>
          </right>
       </BorderPane>
    </children>
