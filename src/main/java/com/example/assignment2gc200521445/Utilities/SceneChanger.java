@@ -13,6 +13,16 @@ import java.io.IOException;
 
 public class SceneChanger {
 
+
+    /**
+     * Changes the current scene to the specified FXML view file.
+     * Optionally, passes data to the new scene's controller and updates the stage title.
+     *
+     * @param event The action event triggered by the user.
+     * @param fxmlFile The path to the FXML file for the new scene.
+     * @param data The Data object to be passed to the new scene's controller (can be null).
+     */
+
         public static void changeScene(ActionEvent event, String fxmlFile, Data data) throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
             Scene scene = new Scene(fxmlLoader.load());
@@ -28,11 +38,8 @@ public class SceneChanger {
                 stage.setTitle("Job Search");
             }
 
-
-
             stage.setScene(scene);
             stage.show();
-
     }
 
 }

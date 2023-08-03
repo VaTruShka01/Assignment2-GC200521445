@@ -41,6 +41,13 @@ public class DetailsController {
     @FXML
     private Label stateLabel;
 
+    /**
+     * Handles the event when the user requests to go back to the search view.
+     * Initiates a scene change to the search view.
+     *
+     * @param event The action event triggered by the user.
+     */
+
     @FXML
     void goBack(ActionEvent event) throws IOException {
 
@@ -48,6 +55,11 @@ public class DetailsController {
         sceneChanger.changeScene(event, "Views/search_view.fxml", null);
     }
 
+    /**
+     * Displays the details of a given data object in the UI.
+     *
+     * @param data The Data object containing details to be displayed.
+     */
 
     public void displayDetails(Data data) {
 

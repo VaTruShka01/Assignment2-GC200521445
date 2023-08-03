@@ -34,6 +34,14 @@ public class SearchController implements Initializable {
     @FXML
     private TextField textField;
 
+
+    /**
+     * Handles the event when the user requests to view details of a selected item.
+     * Retrieves the selected data from the list view and initiates a scene change to the details view.
+     *
+     * @param event The action event triggered by the user.
+     */
+
     @FXML
     void getDetails(ActionEvent event) throws IOException {
 
@@ -42,6 +50,14 @@ public class SearchController implements Initializable {
     sceneChanger.changeScene(event, "Views/details_view.fxml", selectedData);
 
     }
+
+    /**
+     * Handles the event when the user initiates a search.
+     * Clears the list view, retrieves data from an API based on the search text,
+     * and updates the list view with the retrieved data.
+     *
+     * @param event The action event triggered by the user.
+     */
 
     @FXML
     void searchData(ActionEvent event) {
@@ -58,6 +74,15 @@ public class SearchController implements Initializable {
             listView.getItems().addAll(apiResponse.getData());
         }
     }
+
+    /**
+     * Initializes the controller and sets up a listener for the selected item in the list view.
+     * When an item is selected, this method updates the image view, visibility of a button,
+     * and the label to display relevant information about the selected item.
+     *
+     * @param url The location used to resolve relative paths for the root object.
+     * @param resourceBundle The resources used to localize the root object.
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

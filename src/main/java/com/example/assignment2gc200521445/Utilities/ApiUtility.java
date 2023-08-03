@@ -15,6 +15,14 @@ import java.nio.file.Paths;
 
 public class ApiUtility {
 
+
+    /**
+     * Retrieves data from an API based on the provided search name.
+     *
+     * @param searchName The name to be used as a query parameter for the API search.
+     * @return An ApiResponse object containing the data retrieved from the API, or null if an error occurs.
+     */
+
     public static ApiResponse getDataFromApi (String searchName) {
 
         searchName = searchName.trim().replace(" ", "%20");
