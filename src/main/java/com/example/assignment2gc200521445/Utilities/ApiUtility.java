@@ -25,7 +25,7 @@ public class ApiUtility {
     public static ApiResponse getDataFromApi (String searchName) {
 
         searchName = searchName.trim().replace(" ", "%20");
-        String url = "https://jsearch.p.rapidapi.com/search?query=" + searchName;
+        String url = "https://jsearch.p.rapidapi.com/search?num_pages=10&query=" + searchName;
 
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder()

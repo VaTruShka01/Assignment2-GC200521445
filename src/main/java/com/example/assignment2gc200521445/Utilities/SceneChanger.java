@@ -1,7 +1,9 @@
 package com.example.assignment2gc200521445.Utilities;
 
 import com.example.assignment2gc200521445.Controllers.DetailsController;
+import com.example.assignment2gc200521445.Controllers.SearchController;
 import com.example.assignment2gc200521445.Main;
+import com.example.assignment2gc200521445.Models.ApiResponse;
 import com.example.assignment2gc200521445.Models.Data;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +24,7 @@ public class SceneChanger {
      * @param data The Data object to be passed to the new scene's controller (can be null).
      */
 
-        public static void changeScene(ActionEvent event, String fxmlFile, Data data) throws IOException {
+        public static void changeScene(ActionEvent event, String fxmlFile, Data data, ApiResponse jobs) throws IOException {
 
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
             Scene scene = new Scene(fxmlLoader.load());
@@ -30,12 +32,14 @@ public class SceneChanger {
 
             if (data != null){
                 DetailsController controller = fxmlLoader.getController();
-                controller.displayDetails(data);
+                controller.displayDetails(data, jobs);
                 stage.setTitle("Job Description");
             }
 
             else {
                 stage.setTitle("Job Search");
+                SearchController searchController = fxmlLoader.getController();
+                searchController.getSearchPageBack(jobs);
             }
 
             stage.setScene(scene);

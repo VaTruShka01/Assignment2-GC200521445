@@ -1,5 +1,6 @@
 package com.example.assignment2gc200521445.Controllers;
 
+import com.example.assignment2gc200521445.Models.ApiResponse;
 import com.example.assignment2gc200521445.Models.Data;
 import com.example.assignment2gc200521445.Utilities.SceneChanger;
 import javafx.event.ActionEvent;
@@ -40,6 +41,7 @@ public class DetailsController {
 
     @FXML
     private Label stateLabel;
+    private ApiResponse apiResponse;
 
     /**
      * Handles the event when the user requests to go back to the search view.
@@ -52,7 +54,7 @@ public class DetailsController {
     void goBack(ActionEvent event) throws IOException {
 
         SceneChanger sceneChanger = new SceneChanger();
-        sceneChanger.changeScene(event, "Views/search_view.fxml", null);
+        SceneChanger.changeScene(event, "Views/search_view.fxml", null, this.apiResponse);
     }
 
     /**
@@ -61,7 +63,7 @@ public class DetailsController {
      * @param data The Data object containing details to be displayed.
      */
 
-    public void displayDetails(Data data) {
+    public void displayDetails(Data data, ApiResponse jobs) {
 
         applyLinkLabel.setText(data.getApplyLink());
         cityLabel.setText(data.getJobCity());
@@ -71,6 +73,7 @@ public class DetailsController {
         jobTitleLabel.setText(data.getJobTitle());
         publisherLabel.setText(data.getJobPublisher());
         stateLabel.setText(data.getJobState());
+        this.apiResponse = jobs;
 
         try {
             jobImageView.setImage(new Image(data.getEmployerLogo()));

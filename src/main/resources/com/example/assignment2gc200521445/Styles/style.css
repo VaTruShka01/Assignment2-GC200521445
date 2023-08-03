@@ -10,7 +10,7 @@
 }
 
 .image-view{
-    -fx-border-width: 100px;
+    -fx-max-width: 70px;
 }
 
 .list-view {
@@ -23,7 +23,8 @@
 }
 
 #chosenLabel {
-    -fx-font-size: 13px;
+    -fx-font-size: 20px;
+    -fx-text-alignment: center;
 }
 
 #detailsText {

@@ -34,6 +34,9 @@ public class SearchController implements Initializable {
     @FXML
     private TextField textField;
 
+    private ApiResponse apiResponse;
+
+
     /**
      * Handles the event when the user requests to view details of a selected item.
      * Retrieves the selected data from the list view and initiates a scene change to the details view.
@@ -46,9 +49,10 @@ public class SearchController implements Initializable {
 
     Data selectedData = listView.getSelectionModel().getSelectedItem();
     SceneChanger sceneChanger = new SceneChanger();
-    sceneChanger.changeScene(event, "Views/details_view.fxml", selectedData);
+    sceneChanger.changeScene(event, "Views/details_view.fxml", selectedData, apiResponse );
 
     }
+
 
     /**
      * Handles the event when the user initiates a search.
@@ -63,16 +67,33 @@ public class SearchController implements Initializable {
 
         listView.getItems().clear();
         String searchText = textField.getText();
-        ApiResponse apiResponse = ApiUtility.getDataFromApi(searchText);
-
-        if (apiResponse.getData() == null) {
+        apiResponse = ApiUtility.getDataFromApi(searchText);
+        System.out.println(apiResponse.getData().length == 0);
+        if (apiResponse.getData().length == 0) {
             chosenLabel.setText("No Jobs were found!");
+            detailsButton.setVisible(false);
         }
         else {
             chosenLabel.setText("");
             listView.getItems().addAll(apiResponse.getData());
         }
     }
+
+
+    /**
+     * Updates the search page with data from the provided ApiResponse.
+     *
+     * @param apiResponse The ApiResponse containing data to be displayed.
+     */
+
+    public void getSearchPageBack(ApiResponse apiResponse){
+        this.apiResponse = apiResponse;
+        if (apiResponse != null){
+            listView.getItems().addAll(apiResponse.getData());
+
+        }
+    }
+
 
     /**
      * Initializes the controller and sets up a listener for the selected item in the list view.
@@ -88,9 +109,11 @@ public class SearchController implements Initializable {
 
         listView.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
             try {
-                imageView.setImage(new Image(newValue.getEmployerLogo()));
+                chosenLabel.setText("Information not found");
                 detailsButton.setVisible(true);
                 chosenLabel.setText(newValue.toString());
+                imageView.setImage(new Image(newValue.getEmployerLogo()));
+
 
             } catch (Exception e){
                 imageView.setImage(new Image("https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"));
