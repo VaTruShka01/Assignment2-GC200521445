@@ -1,0 +1,36 @@
+.root {
+    -fx-background-color: #fdce94;
+}
+
+.button {
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: white;
+    -fx-font-size: 14px;
+}
+
+.image-view{
+    -fx-border-width: 100px;
+}
+
+.list-view {
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.text-field {
+    -fx-background-color: white;
+}
+
+#chosenLabel {
+    -fx-font-size: 13px;
+}
+
+#detailsText {
+    -fx-font-family: TRON;
+    -fx-background-color: white;
+    -fx-font-size: 12px;
+}
+
+
+

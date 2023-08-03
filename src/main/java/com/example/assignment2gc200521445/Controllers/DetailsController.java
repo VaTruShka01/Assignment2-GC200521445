@@ -45,7 +45,7 @@ public class DetailsController {
     void goBack(ActionEvent event) throws IOException {
 
         SceneChanger sceneChanger = new SceneChanger();
-        sceneChanger.changeScene(event, "search_view.fxml", null);
+        sceneChanger.changeScene(event, "Views/search_view.fxml", null);
     }
 
 
